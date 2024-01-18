@@ -29,9 +29,9 @@ services:
   wordpress:
     image: wordpress
     expose:
-      - 8090
+      - 80
     ports:
-      - 8090:80
+      - 80:80
     environment:
       WORDPRESS_DB_HOST: mariadb
       WORDPRESS_DB_NAME: heticdb
@@ -45,7 +45,7 @@ services:
     build: .
     command: python app.py
     ports:
-      - "80:80"
+      - "8080:80"
     restart: always
     # volumes:
     #   -./static/pwa/icon:/app/static/pwa/icon
